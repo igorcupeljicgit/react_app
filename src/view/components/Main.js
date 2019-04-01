@@ -1,17 +1,26 @@
 import React from "react"
 
+// isMaleOrFemale = (props) => {
+//     const pink = "#ffebee red lighten-5";
+//     const white = "";
+//     return (props.users.gender === "female") ? pink : white;
 
+// }
 
 const Main = (props) => {
 
     console.log(props.users)
 
+    if (props.users.gender === "female") {
+
+    }
+
     const listView = (props.users).map((user) => {
         return (
-            <ul className="collection">
-                <li className="collection-item avatar">
+            <ul className={`collection ${user.gender}`}  >
+                <li className={`collection-item avatar ${user.gender}`}>
                     <img src={user.picture} alt="" className="circle" />
-                    <span className="title">{user.name.first} {user.name.last}</span>
+                    <span className="title ">{user.name.first} {user.name.last}</span>
                     <p><i className="fas fa-envelope-square"></i>{user.email} <br />
                         <i class="fas fa-birthday-cake"></i> {new Date(user.birthday).getDay()} .{new Date(user.birthday).getMonth()} .{new Date(user.birthday).getFullYear()}
                     </p>

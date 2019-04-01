@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header hendler={this.onSwitchView} />
+        <Header hendler={this.onSwitchView} case={this.state.case} />
         <div className="row">
           <Main users={this.state.users} case={this.state.case} />
         </div>
