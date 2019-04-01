@@ -1,26 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class Header  extends Component {
-    constructor(props){
+class Header extends Component {
+    constructor(props) {
         super(props);
-        this.onClickHandler = this.onClickHandler.bind(this);
+        ;
     }
-    onClickHandler(){
+    onClickHandler() {
         console.log("CLICKED");
     }
-    render(){
+    render() {
         return (
-            
+
             <header className="page-footer">
-            
+
                 <div className="col l6 s12">
-                  <h5 className="white-text">Bit People</h5>
+                    <h5 className="white-text">Bit People</h5>
                 </div>
             </header>
-               
-                 
+
+
         );
     }
 }
 
-export {Header};
+export { Header };
