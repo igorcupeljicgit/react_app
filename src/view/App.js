@@ -5,7 +5,7 @@ import { userService } from '../services/UserService';
 import { Footer } from './components/Footer';
 import { Main } from "./components/Main"
 import { Loader } from './components/Loader'
-// import { Smile } from "./components/NoUserFound"
+import { UserNotFound } from "./components/UsersNotFound"
 class App extends Component {
   constructor(props) {
     super(props);
@@ -44,27 +44,30 @@ class App extends Component {
   }
 
   filterUsers = (event) => {
-
-
     this.setState({
-      usersFilter: this.state.users.filter((user) => (user.name.first.indexOf(event.target.value) !== -1))
+      usersFilter: this.state.users.filter((user) => (user.name.indexOf(event.target.value) !== -1))
     })
-
   }
 
 
   render() {
+    const { users, usersFilter } = this.state;
+
     return (
-      <div className="App">
+      <div className="App row">
+
         <Header hendler={this.onSwitchView} filterUsr={this.filterUsers} case={this.state.case} />
         <Loader loaderState={this.state.users} />
+
+
         <div className="row">
-          {/* <Smile searchEngine={this.filterUsers} condition={this.state.usersFilter} /> */}
+          {users.length && !usersFilter.length && <UserNotFound />}
           <Main users={this.state.usersFilter} case={this.state.case} />
         </div>
 
+
         <Footer />
-      </div>
+      </div >
     );
   }
 }

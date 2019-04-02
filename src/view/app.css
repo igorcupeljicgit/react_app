@@ -3,6 +3,11 @@
     margin: 0 auto;
 
 }
+.footerheight{
+  padding: 60px;
+  
+  vertical-align: top;
+}
 .sk-cube-grid {
     width: 40px;
     height: 40px;

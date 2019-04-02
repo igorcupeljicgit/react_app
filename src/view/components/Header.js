@@ -37,7 +37,7 @@ class Header extends Component {
                     </div>
                 </nav >
                 <form>
-                    <label><i className="fas fa-search"></i></label>
+                    {/* <img src=" https://cdn4.iconfinder.com/data/icons/study-instruments/154/magnifier-glass-find-search-loop-study-instrument-512.png" /> */}
                     <input onChange={this.props.filterUsr} className=" input-search" type="search" placeholder={` Search user`} />
                 </form>
             </div>
